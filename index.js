@@ -21,6 +21,9 @@ app.use(express.json());
 
 app.use("/api/auth",userRoutes)
 app.use("/api/messages",messageRoutes)
+app.use("/api/testapi",()=>{
+  return "Hello Tested API";
+})
 
 const server =app.listen(process.env.PORT,async ()=>{
     await connect();
