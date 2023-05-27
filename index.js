@@ -21,8 +21,10 @@ app.use(express.json());
 
 app.use("/api/auth",userRoutes)
 app.use("/api/messages",messageRoutes)
-app.use("/api/testapi",()=>{
-  return "Hello Tested API";
+app.use("/api/testapi",(req,res)=>{
+  console.log("Test")
+
+  return res.json({success:"tested"});
 })
 
 const server =app.listen(process.env.PORT,async ()=>{
