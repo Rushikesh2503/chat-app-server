@@ -9,14 +9,7 @@ const socket = require("socket.io");
 const app=express();
 const userRoutes=require('./routes/user.route')
 const messageRoutes=require('./routes/message.route')
-app.use(
-  cors({
-    origin: 'https://chat-app-public.vercel.app', // Replace with the actual origin of your frontend app
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
-    allowedHeaders: ['Content-Type'], // Specify the allowed headers
-    credentials: true, // Enable sending cookies and other credentials
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth",userRoutes)
@@ -24,7 +17,7 @@ app.use("/api/messages",messageRoutes)
 app.use("/api/testapi",(req,res)=>{
   console.log("Test")
 
-  return res.json({success:"tested"});
+  return res.json({success:"teste"});
 })
 
 const server =app.listen(process.env.PORT,async ()=>{
