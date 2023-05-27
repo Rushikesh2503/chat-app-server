@@ -11,7 +11,7 @@ const userRoutes=require('./routes/user.route')
 const messageRoutes=require('./routes/message.route')
 app.use(
   cors({
-    origin: 'https://your-frontend-app.com', // Replace with the actual origin of your frontend app
+    origin: 'https://chat-app-public.vercel.app', // Replace with the actual origin of your frontend app
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
     allowedHeaders: ['Content-Type'], // Specify the allowed headers
     credentials: true, // Enable sending cookies and other credentials
